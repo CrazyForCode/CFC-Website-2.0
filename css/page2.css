@@ -57,7 +57,7 @@
     border-top-left-radius: 8.5px;
     border-top-right-radius: 8.5px;
     top: 36px;
-    background-color: #83c7d1;
+    background-color: #393939;
     display: none;
 
 }
@@ -88,3 +88,103 @@
         opacity: 0;
     }
 }
+
+#page2 #workShow #workShowScreen #arrow{
+    width: 685px;
+    position: absolute;
+    left: 50%;
+    transform: translate(-50%);
+    top: 44%;
+}
+
+@-webkit-keyframes workShowArrowLeftMove {
+    0%{
+        left: 0px;
+    }
+    50%{
+        left: -15px;
+    }
+    100%{
+        left: 0px;
+    }
+}
+
+@-webkit-keyframes workShowArrowRightMove {
+    0%{
+        left: 0px;
+    }
+    50%{
+        left: 15px;
+    }
+    100%{
+        left: 0px;
+    }
+}
+
+#page2 #workShow #workShowScreen #arrow #arrowLeft{
+    width: 35px;
+    height: 35px;
+    background-image: url("../png/arrow_left.png");
+    background-size: 100%;
+    position: relative;
+    float: left;
+}
+
+#page2 #workShow #workShowScreen #arrow #arrowLeft:hover{
+    -webkit-animation: workShowArrowLeftMove 0.8s;
+    -webkit-animation-iteration-count: infinite;
+}
+
+
+#page2 #workShow #workShowScreen #arrow #arrowRight{
+    width: 35px;
+    height: 35px;
+    background-image: url("../png/arrow_right.png");
+    background-size: 100%;
+    position: relative;
+    margin-left: 650px;
+}
+
+#page2 #workShow #workShowScreen #arrow #arrowRight:hover{
+    -webkit-animation: workShowArrowRightMove 0.8s;
+    -webkit-animation-iteration-count: infinite;
+}
+
+#page2 #workShow #workShowScreen #workShowWindow #workShowContent{
+    position: relative;
+    width: 600px;
+    height: 300px;
+    border: 1px solid #ff9900;
+    margin: auto;
+    top: 10px;
+    overflow: hidden;
+}
+
+#page2 #workShow #workShowScreen #workShowWindow .workShowContentSingle{
+    width: 600px;
+    height: 300px;
+    position: relative;
+    /*background-color: #5e7573;*/
+}
+
+#page2 #workShow #workShowScreen #workShowWindow .workShowContentSingle .workShowPhoto{
+    position: relative;
+    width: 540px;
+    height: 200px;
+    background-color: #ffffff;
+    border: 1px solid #ffffff;
+    margin: auto;
+    top: 10px;
+}
+
+#page2 #workShow #workShowScreen #workShowWindow .workShowContentSingle .workShowMessage{
+    position: relative;
+    width: 540px;
+    height: 60px;
+    border: 1px solid #303125;
+    margin: auto;
+    margin-top: 25px;
+    text-align: center;
+    color: #ffffff;
+}
+
