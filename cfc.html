@@ -5,6 +5,7 @@
     <title>cfc官网</title>
     <link href="css/page1.css" rel="stylesheet">
     <link href="css/page2.css" rel="stylesheet">
+    <link href="css/page3.css" rel="stylesheet">
 </head>
 <body>
 <div id="page1">
@@ -962,9 +963,75 @@
                             so much as long
                         </div>
                     </div>
+                    <div class="workShowContentSingle">
+                        <div class="workShowPhoto"></div>
+                        <div class=workShowMessage>
+                            you just too good to be true,can't
+                            take my eyes off you,you'd be like
+                            to haven too touch ,i never told you
+                            so much as long
+                        </div>
+                    </div>
+                    <div class="workShowContentSingle">
+                        <div class="workShowPhoto"></div>
+                        <div class=workShowMessage>
+                            you just too good to be true,can't
+                            take my eyes off you,you'd be like
+                            to haven too touch ,i never told you
+                            so much as long
+                        </div>
+                    </div>
+                    <div class="workShowContentSingle">
+                        <div class="workShowPhoto"></div>
+                        <div class=workShowMessage>
+                            you just too good to be true,can't
+                            take my eyes off you,you'd be like
+                            to haven too touch ,i never told you
+                            so much as long
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
+    </div>
+</div>
+
+
+
+
+<div id="page3">
+    <div id="joinTitle">
+        Join in us !
+        <hr width="500px" color="#918f77" align="center" size="3"/>
+    </div>
+    <table id="joinContent" cellpadding="15px">
+        <tr align="right">
+            <td>Name:</td>
+            <td id="joinName"><input type="text"></td>
+            <td>Specialty:</td>
+            <td id="joinSpecialty"><input type="text"></td>
+        </tr>
+        <tr align="right">
+            <td>Professional:</td>
+            <td id="joinProfessional"><input type="text"></td>
+            <td>Telephone:</td>
+            <td id="joinTelephone"><input type="text"></td>
+        </tr>
+        <tr align="right">
+            <td>Grade:</td>
+            <td id="joinGrade"><input type="text"></td>
+            <td>QQ:</td>
+            <td id="joinQQ"><input type="text"></td>
+        </tr>
+        <tr align="right">
+            <td>Interest:</td>
+            <td id="joinInterest"><input type="text"></td>
+            <td>Want to Say:</td>
+            <td id="joinSay"><input type="text"></td>
+        </tr>
+    </table>
+    <div id="joinCommitBtu">
+        commit
     </div>
 </div>
 
@@ -1000,6 +1067,8 @@
 
 
 /****************************WORKSHOW***************************/
+
+
     WORKSHOW = function(){};
     WORKSHOW.workShowOpenBtu = document.getElementById("workShowOpenBtu");
     WORKSHOW.workShowScreen = document.getElementById("workShowScreen");
@@ -1013,5 +1082,26 @@
         else{
             WORKSHOW.workShowScreen.className = "workShowScreenOFF";
         }
-    }
+    };
+
+
+/***
+ * This is the add show
+ */
+WORKSHOW.workShowContent = document.getElementById("workShowContent");
+WORKSHOW.workShowContentSingle = document.getElementsByClassName("workShowContentSingle");
+WORKSHOW.workShowContentSingleCount = WORKSHOW.workShowContentSingle.length;
+WORKSHOW.addShow = function(){
+    WORKSHOW.workShowContent.style.width = 600*WORKSHOW.workShowContentSingleCount+"px";
+};
+WORKSHOW.addShow();
+
+/***
+ * This is the workShow slide
+ */
+
+    WORKSHOW.slide = function(){
+
+    };
+
 </script>

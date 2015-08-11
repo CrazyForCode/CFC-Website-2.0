@@ -1,8 +1,14 @@
+
+@font-face {
+    font-family: fontEn;
+    src: url(../font/BROADW.TTF);
+}
+
 body {
     padding: 0px;
     margin: 0px;
     background-color: #e6f4c1;
-    font-family: Broadway;
+    font-family: fontEn;
 }
 
 

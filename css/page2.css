@@ -15,7 +15,6 @@
     position: relative;
     width: 900px;
     height: 520px;
-    border: 1px solid #000000;
     background-image: url(../png/show.png);
     background-size: 100%;
     background-repeat: no-repeat;
@@ -150,20 +149,27 @@
     -webkit-animation-iteration-count: infinite;
 }
 
-#page2 #workShow #workShowScreen #workShowWindow #workShowContent{
+#page2 #workShow #workShowScreen #workShowWindow{
     position: relative;
     width: 600px;
     height: 300px;
-    border: 1px solid #ff9900;
-    margin: auto;
+    border: 1px solid #303125;
     top: 10px;
+    margin: auto;
     overflow: hidden;
+}
+
+#page2 #workShow #workShowScreen #workShowWindow #workShowContent{
+    position: relative;
+    height: 300px;
+    border: 1px solid #ff9900;
 }
 
 #page2 #workShow #workShowScreen #workShowWindow .workShowContentSingle{
     width: 600px;
     height: 300px;
     position: relative;
+    float: left;
     /*background-color: #5e7573;*/
 }
 
