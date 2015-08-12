@@ -43,11 +43,43 @@
     cursor: pointer;
     position: relative;
     margin: auto;
-    margin-top: 24px;
+    margin-top: 35px;
 }
 
 #page3 #joinCommitBtu:hover{
     background-image: url(../png/joinCommit_click.png);
     background-size: 100%;
     background-repeat: no-repeat;
+}
+
+/****************************Copyright*******************************/
+
+#page3 #Copyright{
+    width: 80%;
+    margin: auto;
+    text-align: center;
+    font-size: 34px;
+    position: relative;
+    margin-top: 60px;
+}
+
+#page3 #Copyright img{
+    position: relative;
+    margin-top: 40px;
+}
+
+
+/****************************Message*******************************/
+
+#page3 #TeamMessage{
+    width: 100%;
+    color: #45423c;
+    text-align: center;
+    position: relative;
+    margin-top: 60px;
+}
+
+#page3 #TeamMessage .TeamMessageWord{
+    position: relative;
+    margin-top: 10px;
 }
