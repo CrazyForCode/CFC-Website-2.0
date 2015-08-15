@@ -1,0 +1,17 @@
+#loading{
+    width: 200px;
+    height: 30px;
+    border: 2px solid #000000;
+    border-radius: 10px;
+
+    position: relative;
+    margin: auto;
+    top:250px;
+    display: none;
+}
+
+#loading #loadingBar{
+    height: 30px;
+    background-color: #303125;
+    border-radius: 6px;
+}
