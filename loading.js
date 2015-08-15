@@ -69,13 +69,13 @@ LOADING.End = function(){
 LOADING.preSum = 0;
 LOADING.preAll = 0;
 LOADING.preLong = 200/LOADING.IMG_ARRAY.length;
-LOADING.preNum = 100/LOADING.IMG_ARRAY.length;
+LOADING.preNum = (100/LOADING.IMG_ARRAY.length);
 LOADING.index = 0;
 LOADING.loadImg = function() {
     if (LOADING.index >= LOADING.IMG_ARRAY.length){
         LOADING.preSum=200;
-        console.log("100");
         $$("loadingBar").style.width = LOADING.preSum+"px";
+        $$("loadingNum").innerHTML = "100%";
         LOADING.End();
         return;
     }
@@ -86,9 +86,9 @@ LOADING.loadImg = function() {
         LOADING.preAll+=LOADING.preNum;
         LOADING.preSum+=LOADING.preLong;
         $$("loadingBar").style.width = LOADING.preSum+"px";
-        console.log(LOADING.index);
+        $$("loadingNum").innerHTML = LOADING.preAll.toFixed(2)+"%";
         LOADING.index++;
-        setTimeout(function(){LOADING.loadImg()},400);
+        LOADING.loadImg();
     };
 
 };
