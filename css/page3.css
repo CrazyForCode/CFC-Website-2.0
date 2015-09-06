@@ -1,0 +1,56 @@
+#page3{
+    color: #676254;
+}
+
+#page3 #joinTitle{
+    width: 100%;
+    text-align: center;
+    position: relative;
+    font-size: 45px;
+    margin-top: 120px;
+    color: #7c7a66;
+}
+
+#page3 #joinContent{
+    position: relative;
+    margin: auto;
+    margin-top: 40px;
+    font-size: 18px;
+}
+
+
+#page3 #joinContent input{
+    width: 200px;
+    height: 20px;
+    padding: 5px;
+    font-size: 15px;
+    font-family: fontEn;
+    color: #676254;
+    border: 0px;
+    border-radius: 4px;
+}
+
+#page3 #joinCommitBtu{
+    width: 130px;
+    height: 54px;
+    background-image: url(../png/joinCommit.png);
+    background-size: 100%;
+    background-repeat: no-repeat;
+    font-size: 20px;
+    color: #ffffff;
+    text-align: center;
+    line-height: 52px;
+    cursor: pointer;
+    position: relative;
+    margin: auto;
+    top: 70px;
+}
+
+#page3 #joinCommitBtu:hover{
+    background-image: url(../png/joinCommit_click.png);
+    background-size: 100%;
+    background-repeat: no-repeat;
+}
+
+
+
