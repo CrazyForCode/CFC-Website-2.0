@@ -6,8 +6,8 @@
 //    var arrowUp = document.getElementById("arrowUp");
 //    var arrowDown = document.getElementById("arrowDown");
 //    var workAll = document.getElementById("workAll");
-//    var workCount = 0;//ÏÖÔÚÔÚµÚ¼¸¸öworkWindow
-//    var workHeight = 260;//ÒÆ¶¯µÄ³¤¶È
+//    var workCount = 0;//ï¿½ï¿½ï¿½ï¿½ï¿½ÚµÚ¼ï¿½ï¿½ï¿½workWindow
+//    var workHeight = 260;//ï¿½Æ¶ï¿½ï¿½Ä³ï¿½ï¿½ï¿½
 //
 //    arrowDown.onclick = function(){
 //        workCount++;
@@ -29,6 +29,10 @@
 //    }
 
 
+
+function $$(target){
+    return document.getElementById(target);
+}
 
 /****************************WORKSHOW***************************/
 
@@ -92,3 +96,19 @@ $("#arrowRight").click(function(){
         $("#workShowContent").animate({left:WORKSHOW.slideLong*600+"px"},1000);
     }
 });
+
+
+/**
+ * This is the web control height
+ * @constructor
+ */
+CONTROLHEIGHT = function(){};
+
+CONTROLHEIGHT.fixHeight = document.documentElement.clientHeight;
+alert(CONTROLHEIGHT.fixHeight);
+
+CONTROLHEIGHT.setHeight = function(){
+    $$('page1').style.height = CONTROLHEIGHT.fixHeight + 'px';
+};
+
+CONTROLHEIGHT.setHeight();

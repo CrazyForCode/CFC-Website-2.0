@@ -18,7 +18,6 @@ body {
 
 #page1 {
     position: relative;
-    height: auto;
     width: 100%;
 }
 
@@ -42,10 +41,10 @@ body {
 }
 
 #page1 #navigation ul {
-    width: 65%;
+    width: 68%;
     position: absolute;
     top: 14px;
-    left: 32%;
+    right: 4%;
 }
 
 #page1 #navigation ul li {
@@ -105,11 +104,13 @@ body {
 }
 
 #page1 #house {
-    position: relative;
+    position: absolute;
     width: 700px;
     height: 406px;
     margin: auto;
-    top: 10px;
+    bottom: 2%;
+    left: 50%;
+    transform: translateX(-50%);
     background-image: url(../png/home.png);
     background-size: 100%;
     background-repeat: no-repeat;
@@ -320,7 +321,7 @@ body {
     width: 100%;
     height: 100px;
     position: absolute;
-    top: 540px;
+    bottom: 1.7%;
     background-image: url(../png/rail.png);
     background-size: 100%;
     background-repeat: no-repeat;

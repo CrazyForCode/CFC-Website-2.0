@@ -43,12 +43,14 @@ LOADING.HiddenAll = function(){
     $$("page1").style.display = "none";
     $$("page2").style.display = "none";
     $$("page3").style.display = "none";
+    $$("page4").style.display = 'none';
 };
 
 LOADING.DisplayAll = function(){
     $$("page1").style.display = "block";
     $$("page2").style.display = "block";
     $$("page3").style.display = "block";
+    $$("page4").style.display = 'block';
 };
 
 LOADING.Start = function(){
