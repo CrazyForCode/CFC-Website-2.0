@@ -10,6 +10,7 @@
     height: 60px;
     position: relative;
     margin-top: -2.4%;
+    top: 5px;
     background-image: url(../png/cutApart.png);
 }
 
