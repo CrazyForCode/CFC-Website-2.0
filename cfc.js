@@ -105,10 +105,12 @@ $("#arrowRight").click(function(){
 CONTROLHEIGHT = function(){};
 
 CONTROLHEIGHT.fixHeight = document.documentElement.clientHeight;
-alert(CONTROLHEIGHT.fixHeight);
 
 CONTROLHEIGHT.setHeight = function(){
     $$('page1').style.height = CONTROLHEIGHT.fixHeight + 'px';
+    $$('page2').style.height = CONTROLHEIGHT.fixHeight + 'px';
+    $$('page3').style.height = CONTROLHEIGHT.fixHeight - 1 + 'px';
+
 };
 
 CONTROLHEIGHT.setHeight();
