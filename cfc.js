@@ -105,6 +105,7 @@ $("#arrowRight").click(function(){
 CONTROLHEIGHT = function(){};
 
 CONTROLHEIGHT.fixHeight = document.documentElement.clientHeight;
+CONTROLHEIGHT.fixWidth = document.documentElement.clientWidth;
 
 CONTROLHEIGHT.setHeight = function(){
     $$('page1').style.height = CONTROLHEIGHT.fixHeight + 'px';
@@ -151,10 +152,14 @@ SCROLLWHEEL.startScroll = function(e){
 };
 
 SCROLLWHEEL.goTo = function(){
-    if(SCROLLWHEEL.topNow>-3){
+    if(SCROLLWHEEL.topNow==-2){
+        body.style.top = SCROLLWHEEL.topNow * CONTROLHEIGHT.fixHeight-$$('page4').clientHeight - CONTROLHEIGHT.fixWidth*0.05 + 'px';
         SCROLLWHEEL.topNow--;
     }
-    body.style.top = SCROLLWHEEL.topNow * CONTROLHEIGHT.fixHeight + 'px';
+    if(SCROLLWHEEL.topNow>-2){
+        SCROLLWHEEL.topNow--;
+        body.style.top = SCROLLWHEEL.topNow * CONTROLHEIGHT.fixHeight + 'px';
+    }
 };
 
 SCROLLWHEEL.goDown = function(){
@@ -165,5 +170,6 @@ SCROLLWHEEL.goDown = function(){
 };
 
 window.onload = function(){
+    //alert(CONTROLHEIGHT.fixWidth*0.05);
     SCROLLWHEEL.getEvent();
 };

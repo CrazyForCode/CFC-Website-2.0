@@ -313,6 +313,7 @@ body {
     background-color: #303125;
     opacity: 0.8;
     display: none;
+    z-index: 3;
 }
 
 #page1 #house .winSingle .windowBigDemo .windowBigBg .windowTip .windowTipContent{
