@@ -6,10 +6,17 @@
 
 
 body {
+    width: 100%;
     padding: 0px;
     margin: 0px;
     background-color: #f9f3e1;
     font-family: fontEn;
+    position: absolute;
+    top: 0px;
+    -webkit-transition: top 1s;
+    -webkit-transition-timing-function: ease-in-out;
+    overflow-x: hidden;
+    overflow-y: hidden;
 }
 
 
@@ -266,27 +273,31 @@ body {
     font-size: 20px;
     position: relative;
     margin-top: 50px;
+    /*background-color: #000000;*/
+    /*-webkit-animation: rotatePhoto 2s;*/
+    /*-webkit-animation-iteration-count: infinite;*/
+    z-index: 1;
 }
 
 @-webkit-keyframes rotatePhoto {
     0%{
-        transform: rotate(30deg);
+        transform: rotate(10deg);
     }
     50%{
-        transform: rotate(-30deg);
+        transform: rotate(-10deg);
     }
     100%{
-        transform: rotate(30deg);
+        transform: rotate(10deg);
     }
 }
 
 #page1 #house .winSingle .windowBigDemo .windowBigBg .windowPhoto{
-    width: 90px;
-    height: 80px;
+    width: 140px;
+    height: 140px;
     position: relative;
     margin: auto;
-    top: 40px;
-    background-image: url(../png/people_man.png);
+    top: -8px;
+    background-image: url(../png/lifeng.png);
     background-size: 100%;
     background-repeat: no-repeat;
     -webkit-animation: rotatePhoto 2s;

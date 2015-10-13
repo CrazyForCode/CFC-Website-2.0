@@ -114,3 +114,56 @@ CONTROLHEIGHT.setHeight = function(){
 };
 
 CONTROLHEIGHT.setHeight();
+
+
+/*************************************onmousewheel*********************************/
+var SCROLLWHEEL = function(){};
+var body = document.getElementsByTagName('body')[0];
+SCROLLWHEEL.topNow = 0;
+
+
+SCROLLWHEEL.getEvent = function(){
+    if(window.addEventListener){
+        window.addEventListener('DOMMouseScroll',SCROLLWHEEL.startScroll,true);
+    }
+    window.onmousewheel = SCROLLWHEEL.startScroll;
+};
+
+SCROLLWHEEL.startScroll = function(e){
+    e = e || window.event;
+    if(e.wheelDelta){
+        if(e.wheelDelta>0){
+            SCROLLWHEEL.goDown();
+        }
+        else{
+            SCROLLWHEEL.goTo();
+        }
+    }
+    if(e.detail){
+        if(e.detail>0){
+            SCROLLWHEEL.goTo();
+        }
+        else{
+            SCROLLWHEEL.goDown();
+        }
+    }
+
+};
+
+SCROLLWHEEL.goTo = function(){
+    if(SCROLLWHEEL.topNow>-3){
+        SCROLLWHEEL.topNow--;
+    }
+    body.style.top = SCROLLWHEEL.topNow * CONTROLHEIGHT.fixHeight + 'px';
+};
+
+SCROLLWHEEL.goDown = function(){
+    if(SCROLLWHEEL.topNow<0){
+        SCROLLWHEEL.topNow++;
+    }
+    body.style.top = SCROLLWHEEL.topNow * CONTROLHEIGHT.fixHeight + 'px';
+};
+
+window.onload = function(){
+    SCROLLWHEEL.getEvent();
+};
