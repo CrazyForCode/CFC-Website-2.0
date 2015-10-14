@@ -121,6 +121,7 @@ CONTROLHEIGHT.setHeight();
 var SCROLLWHEEL = function(){};
 var body = document.getElementsByTagName('body')[0];
 SCROLLWHEEL.topNow = 0;
+SCROLLWHEEL.isScroll = false;
 
 
 SCROLLWHEEL.getEvent = function(){
@@ -131,6 +132,9 @@ SCROLLWHEEL.getEvent = function(){
 };
 
 SCROLLWHEEL.startScroll = function(e){
+    if(SCROLLWHEEL.isScroll){
+        return;
+    }
     e = e || window.event;
     if(e.wheelDelta){
         if(e.wheelDelta>0){
@@ -148,7 +152,7 @@ SCROLLWHEEL.startScroll = function(e){
             SCROLLWHEEL.goDown();
         }
     }
-
+    SCROLLWHEEL.isScroll = true;
 };
 
 SCROLLWHEEL.goTo = function(){
@@ -160,16 +164,22 @@ SCROLLWHEEL.goTo = function(){
         SCROLLWHEEL.topNow--;
         body.style.top = SCROLLWHEEL.topNow * CONTROLHEIGHT.fixHeight + 'px';
     }
+    setTimeout(function(){
+        SCROLLWHEEL.isScroll = false;
+    },1500);
 };
 
 SCROLLWHEEL.goDown = function(){
+    SCROLLWHEEL.isScroll = false;
     if(SCROLLWHEEL.topNow<0){
         SCROLLWHEEL.topNow++;
     }
     body.style.top = SCROLLWHEEL.topNow * CONTROLHEIGHT.fixHeight + 'px';
+    setTimeout(function(){
+        SCROLLWHEEL.isScroll = false;
+    },1500);
 };
 
 window.onload = function(){
-    //alert(CONTROLHEIGHT.fixWidth*0.05);
     SCROLLWHEEL.getEvent();
 };
