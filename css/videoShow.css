@@ -16,3 +16,81 @@
 .videoShowOpacity{
     -webkit-animation: displayAnimation 1.5s;
 }
+
+#videoShow #videoPlayer{
+    position: relative;
+    width: 45%;
+    height: 60%;
+    background-image: url(../png/videoPage.png);
+    background-size: 100%;
+    background-repeat: no-repeat;
+    margin: auto;
+}
+
+#videoShow #teamIntroduction{
+    position: absolute;
+    width: 18%;
+    height: 45%;
+    background-image: url(../png/teamIntroduction.png);
+    background-size: 100%;
+    background-repeat: no-repeat;
+    top: 12%;
+    left: 5%;
+}
+
+#videoShow #enterHome{
+    position: absolute;
+    width: 10%;
+    height: 10%;
+    background-image: url(../png/enterBtu.png);
+    background-size: 100%;
+    background-repeat: no-repeat;
+    bottom: 1%;
+    left: 20%;
+
+    text-align: center;
+    line-height: 80px;
+    font-size: 22px;
+    color: #464646;
+    cursor: pointer;
+    z-index: 10;
+}
+
+#videoShow #enterHome:hover{
+    text-shadow: 1px 1px 2px #595750;
+}
+
+@-webkit-keyframes planeFlyAnimation {
+    0%{
+        position: absolute;
+        bottom: 1%;
+        left: 20%;
+    }
+    100%{
+        position: absolute;
+        bottom: 70%;
+        left: 80%;
+    }
+}
+
+#videoShow .planeFly{
+    position: absolute;
+    -webkit-animation: planeFlyAnimation 8s;
+}
+
+#videoShow #teamSpecial{
+    width: 70%;
+    position: relative;
+    margin: auto;
+    display: flex;
+    top: 8%;
+    justify-content: space-around;
+
+}
+
+#videoShow #teamSpecial img{
+    width: 13%;
+    height: 100%;
+    /*border: 1px solid #303125;*/
+}
+

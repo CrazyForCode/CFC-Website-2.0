@@ -75,7 +75,7 @@ LOADING.homeDisplayAll = function(){
 
 LOADING.videoIndex = 0;
 LOADING.homeIndex = 0;
-
+LOADING.status = 1;
 
 
 LOADING.videoLoadingStart = function(){
@@ -87,19 +87,34 @@ LOADING.videoLoadingStart = function(){
 
 LOADING.homeLoadingStart = function(){
     LOADING.videoDisplayAll();
+    LOADING.status = 2;
     $$("videoShow").style.display = 'block';
     $$("videoShow").setAttribute('class','videoShowOpacity');
     $$("videoShow").style.opacity = 1;
     $$("loading").style.display = "none";
-    //SCROLLWHEEL.getEvent();
+    LOADING.loadImg(LOADING.IMG_ARRAY_HOME,LOADING.homeIndex);
+};
+
+LOADING.homeLoadingEnd = function(){
+    $$('enterHome').setAttribute('class','planeFly');
+    $$('enterHome').style.bottom = '70%';
+    $$('enterHome').style.left = '80%';
+    SCROLLWHEEL.getEvent();
+};
+
+$$('enterHome').onclick = function(){
+    $$('videoShow').style.display = 'none';
+    LOADING.homeDisplayAll();
 };
 
 
-
-
 LOADING.loadImg = function(imgStr,index) {
-    if (index >= imgStr.length){
+    if (index >= imgStr.length && LOADING.status==1){
         LOADING.homeLoadingStart();
+        return;
+    }
+    if (index >= imgStr.length && LOADING.status==2){
+        LOADING.homeLoadingEnd();
         return;
     }
 
