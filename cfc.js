@@ -181,5 +181,6 @@ SCROLLWHEEL.goDown = function(){
 };
 
 window.onload = function(){
-    SCROLLWHEEL.getEvent();
-};
+
+}
+;

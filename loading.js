@@ -9,15 +9,12 @@ LOADING.IMG_ARRAY=[
     "png/CFC.png",
     "png/cloud1.png",
     "png/cloud2.png",
-    "png/GGLG2.png",
     "png/home.png",
     "png/joinCommit.png",
     "png/joinCommit_click.png",
     "png/jump.png",
     "png/logo.png",
-    "png/manPhoto.png",
     "png/nav_bg.png",
-    "png/people_man.png",
     "png/rail.png",
     "png/show.png",
     "png/title.png",
@@ -62,6 +59,7 @@ LOADING.Start = function(){
 LOADING.End = function(){
     LOADING.DisplayAll();
     $$("loading").style.display = "none";
+    SCROLLWHEEL.getEvent();
 };
 
 
@@ -76,8 +74,6 @@ LOADING.index = 0;
 LOADING.loadImg = function() {
     if (LOADING.index >= LOADING.IMG_ARRAY.length){
         LOADING.preSum=200;
-        $$("loadingBar").style.width = LOADING.preSum+"px";
-        $$("loadingNum").innerHTML = "100%";
         LOADING.End();
         return;
     }
@@ -95,4 +91,18 @@ LOADING.loadImg = function() {
 
 };
 
+$$('loading').style.height = document.documentElement.clientHeight -1 + 'px';
+
+/************************************************************/
+var JUMPLPADING = function(){};
+JUMPLPADING.target = $$('loadingCFC').getElementsByTagName('span');
+
+JUMPLPADING.jump = function(){
+
+    setTimeout(JUMPLPADING.jump,1000);
+};
+
+
+
 LOADING.Start();
+

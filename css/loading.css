@@ -1,25 +1,121 @@
+/*#loading{*/
+    /*width: 200px;*/
+    /*height: 30px;*/
+    /*border: 2px solid #000000;*/
+    /*border-radius: 10px;*/
+
+    /*position: relative;*/
+    /*margin: auto;*/
+    /*top:250px;*/
+    /*display: none;*/
+/*}*/
+
+/*#loading #loadingBar{*/
+    /*height: 30px;*/
+    /*background-color: #303125;*/
+    /*border-radius: 6px;*/
+/*}*/
+
+/*#loading #loadingNum{*/
+    /*width: 100%;*/
+    /*text-align: center;*/
+    /*font-size: 24px;*/
+    /*position: relative;*/
+    /*margin-top: 20px;*/
+/*}*/
+*{
+    margin: 0px;
+    padding: 0px;
+}
+
 #loading{
-    width: 200px;
-    height: 30px;
-    border: 2px solid #000000;
-    border-radius: 10px;
-
     position: relative;
-    margin: auto;
-    top:250px;
-    display: none;
-}
-
-#loading #loadingBar{
-    height: 30px;
-    background-color: #303125;
-    border-radius: 6px;
-}
-
-#loading #loadingNum{
     width: 100%;
-    text-align: center;
-    font-size: 24px;
+    background-color: #b9d4d5;
+    border: 1px solid #b9d4d5;
+    z-index: -1;
+}
+
+#loading #loadingBlock{
     position: relative;
-    margin-top: 20px;
+    width: 36%;
+    /*border: 1px solid #303125;*/
+    margin: 4% auto;
+    overflow: hidden;
+    z-index: -1;
+}
+
+#loading #loadingBlock #loadingLogo{
+    width: 100%;
+    display: block;
+}
+
+
+@-webkit-keyframes loadingAnimation{
+    0%{
+        position: absolute;
+        top: 56%;
+    }
+    100%{
+        position: absolute;
+        top: 2%;
+    }
+}
+
+#loading #loadingBlock #loadingBg{
+    width: 70%;
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    top: 56%;
+    z-index: -1;
+    -webkit-animation: loadingAnimation 20s;
+}
+
+
+#loading #loadingCFC{
+    width: 100%;
+    position: absolute;
+    height: 100px;
+    font-size: 26px;
+    color: #ffffff;
+    top: 50%;
+    transform: translateY(-50%);
+    text-align: center;
+}
+
+
+#loading #loadingCFC .loadingCFCE{
+    position: relative;
+    height: 100%;
+    display: inline-block;
+    margin-left: 14px;
+    margin-right: 14px;
+}
+
+
+#loading #loadingCFC .loadingCFCE span{
+    position: relative;
+    top: 30px;
+}
+
+#loading #loadingCFC .loadingCFCE .loadingCFCMove{
+    position: relative;
+    top: 30px;
+    -webkit-animation: loadingCFCAnimation 1.4s;
+}
+
+@-webkit-keyframes  loadingCFCAnimation{
+    0%{
+        position: relative;
+        top: 30px;
+    }
+    50% {
+        position: relative;
+        top: 14px;
+    }
+    100%{
+        position: relative;
+        top: 30px;
+    }
 }
