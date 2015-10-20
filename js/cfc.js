@@ -182,5 +182,4 @@ SCROLLWHEEL.goDown = function(){
 
 window.onload = function(){
 
-}
-;
+};
