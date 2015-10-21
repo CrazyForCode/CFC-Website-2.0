@@ -27,13 +27,13 @@
     color: #f6f2d0;
 }
 
-#page4 #copyright #teamlogo{
+#page4 #copyright #teamLogo{
     position: relative;
     text-align: center;
     margin-top: 30px;
 }
 
-#page4 #copyright #teamlogo img{
+#page4 #copyright #teamLogo img{
     width: 360px;
     margin-top: 10px;
 }

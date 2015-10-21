@@ -101,13 +101,14 @@ LOADING.homeLoadingEnd = function(){
     $$('enterHome').setAttribute('class','planeFly');
     $$('enterHome').style.bottom = '70%';
     $$('enterHome').style.left = '80%';
-    SCROLLWHEEL.getEvent();
 };
 
 $$('enterHome').onclick = function(){
     $$('videoShow').style.display = 'none';
     LOADING.homeDisplayAll();
+    SCROLLWHEEL.getEvent();
 };
+
 LOADING.longNow = 56;
 LOADING.avgLongRemove = parseInt(LOADING.loadingLong/LOADING.IMG_ARRAY_VIDEO.length);
 
