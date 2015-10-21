@@ -12,10 +12,7 @@ LOADING.IMG_ARRAY_VIDEO = [
     "png/introductionHeight.png",
     "png/introductionHonor.png",
     "png/teamIntroduction.png",
-    "png/videoPage.png"
-];
-
-LOADING.IMG_ARRAY_HOME=[
+    "png/videoPage.png",
     "png/arrow_left.png",
     "png/arrow_right.png",
     "png/CFC.png",
@@ -31,7 +28,10 @@ LOADING.IMG_ARRAY_HOME=[
     "png/rail.png",
     "png/show.png",
     "png/title.png",
-    "png/window_big.png",
+    "png/window_big.png"
+];
+
+LOADING.IMG_ARRAY_HOME=[
     "png/work1.png",
     "png/work2.png",
     "png/work3.png",
