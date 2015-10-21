@@ -54,6 +54,7 @@
     color: #464646;
     cursor: pointer;
     z-index: 10;
+    display: none;
 }
 
 #videoShow #enterHome:hover{

@@ -51,16 +51,16 @@
 }
 
 
-@-webkit-keyframes loadingAnimation{
-    0%{
-        position: absolute;
-        top: 56%;
-    }
-    100%{
-        position: absolute;
-        top: 2%;
-    }
-}
+/*@-webkit-keyframes loadingAnimation{*/
+    /*0%{*/
+        /*position: absolute;*/
+        /*top: 56%;*/
+    /*}*/
+    /*100%{*/
+        /*position: absolute;*/
+        /*top: 2%;*/
+    /*}*/
+/*}*/
 
 #loading #loadingBlock #loadingBg{
     width: 70%;
@@ -69,7 +69,7 @@
     transform: translateX(-50%);
     top: 56%;
     z-index: -1;
-    -webkit-animation: loadingAnimation 20s;
+    -webkit-transition: top 0.5s;
 }
 
 

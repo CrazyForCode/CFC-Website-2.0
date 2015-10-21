@@ -76,6 +76,7 @@ LOADING.homeDisplayAll = function(){
 LOADING.videoIndex = 0;
 LOADING.homeIndex = 0;
 LOADING.status = 1;
+LOADING.loadingLong = 54;
 
 
 LOADING.videoLoadingStart = function(){
@@ -96,6 +97,7 @@ LOADING.homeLoadingStart = function(){
 };
 
 LOADING.homeLoadingEnd = function(){
+    $$('enterHome').style.display = 'block';
     $$('enterHome').setAttribute('class','planeFly');
     $$('enterHome').style.bottom = '70%';
     $$('enterHome').style.left = '80%';
@@ -106,11 +108,14 @@ $$('enterHome').onclick = function(){
     $$('videoShow').style.display = 'none';
     LOADING.homeDisplayAll();
 };
+LOADING.longNow = 56;
+LOADING.avgLongRemove = parseInt(LOADING.loadingLong/LOADING.IMG_ARRAY_VIDEO.length);
 
 
 LOADING.loadImg = function(imgStr,index) {
     if (index >= imgStr.length && LOADING.status==1){
         LOADING.homeLoadingStart();
+        $$('loadingBg').style.top = '2%';
         return;
     }
     if (index >= imgStr.length && LOADING.status==2){
@@ -122,10 +127,12 @@ LOADING.loadImg = function(imgStr,index) {
     img.src = imgStr[index];
     img.onload = function(){
         index++;
+        LOADING.longNow-=LOADING.avgLongRemove;
+        $$('loadingBg').style.top = LOADING.longNow + '%';
         console.log(index);
         setTimeout(function(){
 
-        LOADING.loadImg(imgStr,index)},200);
+        LOADING.loadImg(imgStr,index)},1000);
     };
 };
 
