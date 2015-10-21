@@ -132,7 +132,7 @@ LOADING.loadImg = function(imgStr,index) {
         console.log(index);
         setTimeout(function(){
 
-        LOADING.loadImg(imgStr,index)},1000);
+        LOADING.loadImg(imgStr,index)},100);
     };
 };
 
