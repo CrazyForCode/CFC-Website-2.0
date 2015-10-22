@@ -40,7 +40,9 @@ LOADING.IMG_ARRAY_HOME=[
     "png/work6.png",
     "png/work7.png",
     "png/work8.png",
-    "png/work9.png"
+    "png/work9.png",
+    "png/work10.png",
+    "png/work11.png"
 ];
 
 function $$(target){
