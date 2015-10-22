@@ -40,8 +40,7 @@ LOADING.IMG_ARRAY_HOME=[
     "png/work6.png",
     "png/work7.png",
     "png/work8.png",
-    "png/work9.png",
-    "png/work10.png"
+    "png/work9.png"
 ];
 
 function $$(target){
@@ -76,7 +75,7 @@ LOADING.homeDisplayAll = function(){
 LOADING.videoIndex = 0;
 LOADING.homeIndex = 0;
 LOADING.status = 1;
-LOADING.loadingLong = 54;
+LOADING.loadingLong = 52;
 
 
 LOADING.videoLoadingStart = function(){
@@ -116,7 +115,7 @@ LOADING.avgLongRemove = parseInt(LOADING.loadingLong/LOADING.IMG_ARRAY_VIDEO.len
 LOADING.loadImg = function(imgStr,index) {
     if (index >= imgStr.length && LOADING.status==1){
         LOADING.homeLoadingStart();
-        $$('loadingBg').style.top = '2%';
+        $$('loadingBg').style.top = '4%';
         return;
     }
     if (index >= imgStr.length && LOADING.status==2){
