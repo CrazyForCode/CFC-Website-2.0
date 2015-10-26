@@ -2,34 +2,6 @@
  * Created by DaisyCream on 2015/8/11.
  */
 
-
-//    var arrowUp = document.getElementById("arrowUp");
-//    var arrowDown = document.getElementById("arrowDown");
-//    var workAll = document.getElementById("workAll");
-//    var workCount = 0;//�����ڵڼ���workWindow
-//    var workHeight = 260;//�ƶ��ĳ���
-//
-//    arrowDown.onclick = function(){
-//        workCount++;
-//        if(workCount>3){
-//            workCount=3;
-//            return;
-//        }
-//        workAll.style.top = -(workCount*workHeight)+"px";
-//    }
-//
-//
-//    arrowUp.onclick = function workmoveup(){
-//        workCount--;
-//        if(workCount<0){
-//            workCount=0;
-//            return;
-//        }
-//        workAll.style.top = -(workCount*workHeight)+"px";
-//    }
-
-
-
 function $$(target){
     return document.getElementById(target);
 }
@@ -190,6 +162,16 @@ addPhoto.theWindowPhoto = function(){
         addPhoto.windowPhoto[addPhoto.count].style.backgroundImage = 'url('+ LOADING.IMG_ARRAY_PHOTO[addPhoto.count] +')';
     }
 };
+
+
+/*********************************check the window is open**********************************/
+var winSingle = document.getElementsByClassName('winSingle');
+var openWindowTip = document.getElementById('openWindowTip');
+for(var i=0;i<winSingle.length;i++){
+    winSingle[i].onmousemove = function(){
+        setTimeout(function(){openWindowTip.style.display = 'none';},1000);
+    };
+}
 
 
 window.onload = function(){

@@ -343,6 +343,12 @@ body {
     z-index: -1;
 }
 
+#openWindowTip{
+    position: absolute;
+    top: 40%;
+    transform: translateY(-50%);
+    left: 14%;
+}
 
 
 /*********************************Page 2*********************************/

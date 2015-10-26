@@ -28,7 +28,8 @@ LOADING.IMG_ARRAY_VIDEO = [
     "png/rail.png",
     "png/show.png",
     "png/title.png",
-    "png/window_big.png"
+    "png/window_big.png",
+    "png/openWindowTip.png"
 ];
 LOADING.IMG_ARRAY_PHOTO = [
     "peoplePhoto/yangli.png",
