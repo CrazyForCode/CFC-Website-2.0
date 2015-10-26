@@ -328,6 +328,10 @@ body {
     cursor: pointer;
 }
 
+#page1 #house .winSingle .windowBigDemo .windowBigBg .windowTip .windowTipContent a{
+    color: #ffffff;
+}
+
 #rail{
     width: 100%;
     height: 100px;
