@@ -180,6 +180,17 @@ SCROLLWHEEL.goDown = function(){
     },1500);
 };
 
-window.onload = function(){
+/****************************People Photo***************************/
+var addPhoto = function(){};
+addPhoto.windowPhoto = document.getElementsByClassName('windowPhoto');
+addPhoto.count = 0;
+addPhoto.theWindowPhoto = function(){
+    for(addPhoto.count;addPhoto.count<LOADING.IMG_ARRAY_PHOTO.length;addPhoto.count++){
+        console.log(addPhoto.count);
+        addPhoto.windowPhoto[addPhoto.count].style.backgroundImage = 'url('+ LOADING.IMG_ARRAY_PHOTO[addPhoto.count] +')';
+    }
+};
 
+
+window.onload = function(){
 };

@@ -297,7 +297,6 @@ body {
     position: relative;
     margin: auto;
     top: -8px;
-    background-image: url(../png/lifeng.png);
     background-size: 100%;
     background-repeat: no-repeat;
     -webkit-animation: rotatePhoto 2s;

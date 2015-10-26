@@ -30,7 +30,45 @@ LOADING.IMG_ARRAY_VIDEO = [
     "png/title.png",
     "png/window_big.png"
 ];
-
+LOADING.IMG_ARRAY_PHOTO = [
+    "peoplePhoto/yangli.png",
+    "peoplePhoto/liangjingfeng.png",
+    "peoplePhoto/wujian.png",
+    "peoplePhoto/yanglingxiao.png",
+    "peoplePhoto/yetianxiong.png",
+    "peoplePhoto/limao.png",
+    "peoplePhoto/yuanzhengli.png",
+    "peoplePhoto/tongyun.png",
+    "peoplePhoto/lixin.png",
+    "peoplePhoto/dongshu.png",
+    "peoplePhoto/lvhaosen.png",
+    "peoplePhoto/chenhao.png",
+    "peoplePhoto/zhuliping.png",
+    "peoplePhoto/dandan.png",
+    "peoplePhoto/liuqijun.png",
+    "peoplePhoto/chenyaoxuan.png",
+    "peoplePhoto/zhangyuanyuan.png",
+    "peoplePhoto/tuhao.png",
+    "peoplePhoto/huangshiwen.png",
+    "peoplePhoto/jiawan.png",
+    "peoplePhoto/liyeting.png",
+    "peoplePhoto/shisan.png",
+    "peoplePhoto/sunxuan.png",
+    "peoplePhoto/tianchuanyu.png",
+    "peoplePhoto/wangchaoran.png",
+    "peoplePhoto/zhangsicong.png",
+    "peoplePhoto/caoyunxuan.png",
+    "peoplePhoto/liwanjing.png",
+    "peoplePhoto/liyunhang.png",
+    "peoplePhoto/liaozhongwei.png",
+    "peoplePhoto/wudongliang.png",
+    "peoplePhoto/lifeng.png",
+    "peoplePhoto/xufangzheng.png",
+    "peoplePhoto/yangjusheng.png",
+    "peoplePhoto/yangxin.png",
+    "peoplePhoto/zhanghaolin.png",
+    "peoplePhoto/zhangyunzhao.png"
+];
 LOADING.IMG_ARRAY_HOME=[
     "png/work1.png",
     "png/work2.png",
@@ -77,14 +115,14 @@ LOADING.homeDisplayAll = function(){
 LOADING.videoIndex = 0;
 LOADING.homeIndex = 0;
 LOADING.status = 1;
-LOADING.loadingLong = 52;
-
+LOADING.loadingLong = 50;
+LOADING.statusOneStr = LOADING.IMG_ARRAY_VIDEO.concat(LOADING.IMG_ARRAY_PHOTO);
 
 LOADING.videoLoadingStart = function(){
     console.log("loading");
     LOADING.videoHiddenAll();
     $$("loading").style.display = "block";
-    LOADING.loadImg(LOADING.IMG_ARRAY_VIDEO,LOADING.videoIndex);
+    LOADING.loadImg(LOADING.statusOneStr,LOADING.videoIndex);
 };
 
 LOADING.homeLoadingStart = function(){
@@ -95,6 +133,7 @@ LOADING.homeLoadingStart = function(){
     $$("videoShow").style.opacity = 1;
     $$("loading").style.display = "none";
     LOADING.loadImg(LOADING.IMG_ARRAY_HOME,LOADING.homeIndex);
+    addPhoto.theWindowPhoto();
 };
 
 LOADING.homeLoadingEnd = function(){
@@ -110,14 +149,15 @@ $$('enterHome').onclick = function(){
     SCROLLWHEEL.getEvent();
 };
 
-LOADING.longNow = 56;
-LOADING.avgLongRemove = parseInt(LOADING.loadingLong/LOADING.IMG_ARRAY_VIDEO.length);
 
+LOADING.longNow = 56;
+LOADING.avgLongRemove = (LOADING.loadingLong/LOADING.statusOneStr.length).toFixed(2);
+console.log(LOADING.avgLongRemove);
 
 LOADING.loadImg = function(imgStr,index) {
     if (index >= imgStr.length && LOADING.status==1){
+        $$('loadingBg').style.top = '6%';
         LOADING.homeLoadingStart();
-        $$('loadingBg').style.top = '4%';
         return;
     }
     if (index >= imgStr.length && LOADING.status==2){
@@ -131,10 +171,8 @@ LOADING.loadImg = function(imgStr,index) {
         index++;
         LOADING.longNow-=LOADING.avgLongRemove;
         $$('loadingBg').style.top = LOADING.longNow + '%';
-        console.log(index);
         setTimeout(function(){
-
-        LOADING.loadImg(imgStr,index)},100);
+        LOADING.loadImg(imgStr,index)},50);
     };
 };
 
