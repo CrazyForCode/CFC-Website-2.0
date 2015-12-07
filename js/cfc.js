@@ -98,7 +98,7 @@ SCROLLWHEEL.isScroll = false;
 
 SCROLLWHEEL.getEvent = function(){
     if(window.addEventListener){
-        window.addEventListener('DOMMouseScroll',SCROLLWHEEL.startScroll,true);
+        window.addEventListener('DOMMouseScroll',SCROLLWHEEL.startScroll,false);
     }
     window.onmousewheel = SCROLLWHEEL.startScroll;
 };
@@ -142,7 +142,7 @@ SCROLLWHEEL.goTo = function(){
 };
 
 SCROLLWHEEL.goDown = function(){
-    SCROLLWHEEL.isScroll = false;
+    //SCROLLWHEEL.isScroll = false;
     if(SCROLLWHEEL.topNow<0){
         SCROLLWHEEL.topNow++;
     }

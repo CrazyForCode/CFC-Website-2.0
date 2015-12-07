@@ -15,8 +15,9 @@ body {
     top: 0px;
     -webkit-transition: top 1s;
     -webkit-transition-timing-function: ease-in-out;
-    overflow-x: hidden;
-    overflow-y: hidden;
+    overflow: hidden;
+    /*overflow-x: hidden;*/
+    /*overflow-y: hidden;*/
 }
 
 

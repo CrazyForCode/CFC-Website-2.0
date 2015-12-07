@@ -5,14 +5,6 @@ var LOADING = function(){};
 LOADING.IMG_ARRAY_VIDEO = [
     "png/loading_bg.png",
     "png/loadingLogo.png",
-    "png/enterBtu.png",
-    "png/introductionCooper.png",
-    "png/introductionFree.png",
-    "png/introductionHappy.png",
-    "png/introductionHeight.png",
-    "png/introductionHonor.png",
-    "png/teamIntroduction.png",
-    "png/videoPage.png",
     "png/arrow_left.png",
     "png/arrow_right.png",
     "png/CFC.png",
@@ -68,9 +60,7 @@ LOADING.IMG_ARRAY_PHOTO = [
     "peoplePhoto/yangjusheng.png",
     "peoplePhoto/yangxin.png",
     "peoplePhoto/zhanghaolin.png",
-    "peoplePhoto/zhangyunzhao.png"
-];
-LOADING.IMG_ARRAY_HOME=[
+    "peoplePhoto/zhangyunzhao.png",
     "png/work1.png",
     "png/work2.png",
     "png/work3.png",
@@ -84,24 +74,10 @@ LOADING.IMG_ARRAY_HOME=[
     "png/work11.png"
 ];
 
+
 function $$(target){
     return document.getElementById(target);
 }
-
-LOADING.videoHiddenAll = function(){
-    $$("page1").style.display = "none";
-    $$("page2").style.display = "none";
-    $$("page3").style.display = "none";
-    $$("page4").style.display = 'none';
-    $$("videoShow").style.display = 'none';
-};
-
-LOADING.videoDisplayAll = function(){
-    $$("page1").style.display = "none";
-    $$("page2").style.display = "none";
-    $$("page3").style.display = "none";
-    $$("page4").style.display = 'none';
-};
 
 LOADING.homeDisplayAll = function(){
     $$("page1").style.display = "block";
@@ -113,55 +89,31 @@ LOADING.homeDisplayAll = function(){
 
 
 
-LOADING.videoIndex = 0;
 LOADING.homeIndex = 0;
-LOADING.status = 1;
 LOADING.loadingLong = 50;
-LOADING.statusOneStr = LOADING.IMG_ARRAY_VIDEO.concat(LOADING.IMG_ARRAY_PHOTO);
-
-LOADING.videoLoadingStart = function(){
-    console.log("loading");
-    LOADING.videoHiddenAll();
-    $$("loading").style.display = "block";
-    LOADING.loadImg(LOADING.statusOneStr,LOADING.videoIndex);
-};
+LOADING.statusImgStr = LOADING.IMG_ARRAY_VIDEO.concat(LOADING.IMG_ARRAY_PHOTO);
 
 LOADING.homeLoadingStart = function(){
-    LOADING.videoDisplayAll();
-    LOADING.status = 2;
-    $$("videoShow").style.display = 'block';
-    $$("videoShow").setAttribute('class','videoShowOpacity');
-    $$("videoShow").style.opacity = 1;
-    $$("loading").style.display = "none";
-    LOADING.loadImg(LOADING.IMG_ARRAY_HOME,LOADING.homeIndex);
-    addPhoto.theWindowPhoto();
+    LOADING.loadImg(LOADING.statusImgStr,LOADING.homeIndex);
 };
 
 LOADING.homeLoadingEnd = function(){
-    $$('enterHome').style.display = 'block';
-    $$('enterHome').setAttribute('class','planeFly');
-    $$('enterHome').style.bottom = '70%';
-    $$('enterHome').style.left = '80%';
-};
-
-$$('enterHome').onclick = function(){
-    $$('videoShow').style.display = 'none';
+    $$("loading").setAttribute('class','.homeShowOpacity');
+    $$("loading").style.opacity = 0;
     LOADING.homeDisplayAll();
     SCROLLWHEEL.getEvent();
+    addPhoto.theWindowPhoto();
 };
+
 
 
 LOADING.longNow = 56;
-LOADING.avgLongRemove = (LOADING.loadingLong/LOADING.statusOneStr.length).toFixed(2);
+LOADING.avgLongRemove = (LOADING.loadingLong/LOADING.statusImgStr.length).toFixed(2);
 console.log(LOADING.avgLongRemove);
 
 LOADING.loadImg = function(imgStr,index) {
-    if (index >= imgStr.length && LOADING.status==1){
+    if (index >= imgStr.length){
         $$('loadingBg').style.top = '6%';
-        LOADING.homeLoadingStart();
-        return;
-    }
-    if (index >= imgStr.length && LOADING.status==2){
         LOADING.homeLoadingEnd();
         return;
     }
@@ -173,12 +125,12 @@ LOADING.loadImg = function(imgStr,index) {
         LOADING.longNow-=LOADING.avgLongRemove;
         $$('loadingBg').style.top = LOADING.longNow + '%';
         setTimeout(function(){
-        LOADING.loadImg(imgStr,index)},50);
+        LOADING.loadImg(imgStr,index)},40);
     };
 };
 
 $$('loading').style.height = document.documentElement.clientHeight -1 + 'px';
 
 
-LOADING.videoLoadingStart();
+LOADING.homeLoadingStart();
 
