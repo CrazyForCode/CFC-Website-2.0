@@ -21,7 +21,18 @@ LOADING.IMG_ARRAY_VIDEO = [
     "png/show.png",
     "png/title.png",
     "png/window_big.png",
-    "png/openWindowTip.png"
+    "png/openWindowTip.png",
+    "png/work1.png",
+    "png/work2.png",
+    "png/work3.png",
+    "png/work4.png",
+    "png/work5.png",
+    "png/work6.png",
+    "png/work7.png",
+    "png/work8.png",
+    "png/work9.png",
+    "png/work10.png",
+    "png/work11.png"
 ];
 LOADING.IMG_ARRAY_PHOTO = [
     "peoplePhoto/yangli.png",
@@ -60,18 +71,7 @@ LOADING.IMG_ARRAY_PHOTO = [
     "peoplePhoto/yangjusheng.png",
     "peoplePhoto/yangxin.png",
     "peoplePhoto/zhanghaolin.png",
-    "peoplePhoto/zhangyunzhao.png",
-    "png/work1.png",
-    "png/work2.png",
-    "png/work3.png",
-    "png/work4.png",
-    "png/work5.png",
-    "png/work6.png",
-    "png/work7.png",
-    "png/work8.png",
-    "png/work9.png",
-    "png/work10.png",
-    "png/work11.png"
+    "peoplePhoto/zhangyunzhao.png"
 ];
 
 
