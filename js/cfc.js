@@ -108,7 +108,7 @@ SCROLLWHEEL.startScroll = function(e){
         return;
     }
     e = e || window.event;
-    if(e.wheelDelta){
+    if(e.wheelDelta || e.wheelDelta==0){
         if(e.wheelDelta>0){
             SCROLLWHEEL.goDown();
         }
@@ -116,7 +116,7 @@ SCROLLWHEEL.startScroll = function(e){
             SCROLLWHEEL.goTo();
         }
     }
-    if(e.detail){
+    else if(e.detail || e.detail==0){
         if(e.detail>0){
             SCROLLWHEEL.goTo();
         }
@@ -158,7 +158,6 @@ addPhoto.windowPhoto = document.getElementsByClassName('windowPhoto');
 addPhoto.count = 0;
 addPhoto.theWindowPhoto = function(){
     for(addPhoto.count;addPhoto.count<LOADING.IMG_ARRAY_PHOTO.length;addPhoto.count++){
-        console.log(addPhoto.count);
         addPhoto.windowPhoto[addPhoto.count].style.backgroundImage = 'url('+ LOADING.IMG_ARRAY_PHOTO[addPhoto.count] +')';
     }
 };

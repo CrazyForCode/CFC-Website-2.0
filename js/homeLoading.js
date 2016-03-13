@@ -109,7 +109,7 @@ LOADING.homeLoadingEnd = function(){
 
 LOADING.longNow = 56;
 LOADING.avgLongRemove = (LOADING.loadingLong/LOADING.statusImgStr.length).toFixed(2);
-console.log(LOADING.avgLongRemove);
+//console.log(LOADING.avgLongRemove);
 
 LOADING.loadImg = function(imgStr,index) {
     if (index >= imgStr.length){
