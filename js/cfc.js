@@ -101,6 +101,21 @@ SCROLLWHEEL.getEvent = function(){
         window.addEventListener('DOMMouseScroll',SCROLLWHEEL.startScroll,false);
     }
     window.onmousewheel = SCROLLWHEEL.startScroll;
+    SCROLLWHEEL.addKeyControl();
+};
+
+SCROLLWHEEL.addKeyControl = function(){
+    document.onkeydown = function(event){
+        var event = event || window.event;
+        switch(event.keyCode){
+            case 38:
+                SCROLLWHEEL.goDown();
+                break;
+            case 40:
+                SCROLLWHEEL.goTo();
+                break;
+        }
+    };
 };
 
 SCROLLWHEEL.startScroll = function(e){
